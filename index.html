@@ -1,151 +1,214 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Viral AI Instagram Bio Generator - Free Online Tool</title>
-  <meta name="description" content="Use Viral AI Instagram Bio Generator online for free. Instant, secure, and easy to use.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --bg-dark: #090d16;
-      --card-bg: rgba(18, 26, 44, 0.75);
-      --border-color: rgba(255, 255, 255, 0.12);
-      --accent-primary: #38bdf8;
-      --accent-purple: #818cf8;
-      --accent-green: #34d399;
-      --text-main: #f8fafc;
-      --text-muted: #94a3b8;
-    }
+    <meta charset="UTF-8">
+    <title>Viral AI Instagram Bio Generator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #0f0f0f;
+            --glass-bg: rgba(255, 255, 255, 0.08);
+            --glass-border: rgba(255, 255, 255, 0.12);
+            --primary: #ff6b6b;
+            --accent: #4ecca3;
+            --text-light: #e0e0e0;
+            --text-muted: #b0b0b0;
+            --transition: 0.3s ease;
+        }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      background-color: var(--bg-dark);
-      color: var(--text-main);
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      background-image: 
-        radial-gradient(circle at 10% 10%, rgba(56, 189, 248, 0.1) 0%, transparent 40%),
-        radial-gradient(circle at 90% 90%, rgba(129, 140, 248, 0.1) 0%, transparent 40%);
-    }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-    header {
-      padding: 1.25rem 2rem;
-      border-bottom: 1px solid var(--border-color);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      backdrop-filter: blur(12px);
-      background: rgba(9, 13, 22, 0.85);
-      position: sticky;
-      top: 0;
-      z-index: 50;
-    }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-light);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 1rem;
+        }
 
-    .brand { font-size: 1.25rem; font-weight: 700; background: linear-gradient(to right, #38bdf8, #818cf8); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-    .status-badge { font-size: 0.75rem; background: rgba(52, 211, 153, 0.15); color: var(--accent-green); border: 1px solid rgba(52, 211, 153, 0.3); padding: 0.3rem 0.75rem; border-radius: 999px; font-weight: 600; }
+        h1 {
+            font-weight: 600;
+            margin: 1rem 0;
+            text-align: center;
+            background: linear-gradient(45deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
 
-    main { flex: 1; padding: 2rem; max-width: 1000px; width: 100%; margin: 0 auto; display: flex; flex-direction: column; gap: 1.75rem; }
-    
-    .ad-slot {
-      width: 100%; min-height: 90px; background: rgba(18, 26, 44, 0.4); border: 1px dashed var(--border-color); border-radius: 0.75rem; padding: 1rem; text-align: center; color: var(--text-muted); font-size: 0.8rem; display: flex; flex-direction: column; align-items: center; justify-content: center; overflow: hidden;
-    }
-    .ad-label { font-size: 0.65rem; text-transform: uppercase; tracking: 0.1em; color: var(--accent-primary); margin-bottom: 0.3rem; opacity: 0.8; }
+        .glass {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 1rem;
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            padding: 2rem;
+            width: 100%;
+            max-width: 600px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+            transition: var(--transition);
+        }
 
-    .app-card {
-      background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 1.25rem; padding: 2.5rem; backdrop-filter: blur(12px); box-shadow: 0 20px 40px rgba(0,0,0,0.4); display: flex; flex-direction: column; gap: 1.5rem;
-    }
+        .glass:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 48px rgba(0,0,0,0.6);
+        }
 
-    .app-card h1 { font-size: 1.85rem; font-weight: 800; letter-spacing: -0.02em; }
-    .app-card p { color: var(--text-muted); line-height: 1.6; }
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--text-muted);
+        }
 
-    .drop-zone { border: 2px dashed var(--accent-primary); border-radius: 1rem; padding: 2.5rem; text-align: center; background: rgba(56, 189, 248, 0.05); cursor: pointer; transition: background 0.2s; }
-    .drop-zone:hover { background: rgba(56, 189, 248, 0.1); }
+        textarea, input[type="text"] {
+            width: 100%;
+            padding: 0.8rem;
+            border: none;
+            border-radius: 0.5rem;
+            background: rgba(255,255,255,0.1);
+            color: var(--text-light);
+            font-family: 'Roboto', sans-serif;
+            resize: vertical;
+            min-height: 80px;
+            transition: var(--transition);
+        }
 
-    .input-group { display: flex; flex-direction: column; gap: 0.5rem; }
-    label { font-size: 0.875rem; font-weight: 600; color: var(--text-main); }
-    textarea, input, select { width: 100%; padding: 0.85rem 1.1rem; background: rgba(9, 13, 22, 0.7); border: 1px solid var(--border-color); border-radius: 0.75rem; color: var(--text-main); font-family: inherit; font-size: 0.95rem; outline: none; transition: border 0.2s; }
-    textarea:focus, input:focus, select:focus { border-color: var(--accent-primary); }
+        textarea:focus, input:focus {
+            outline: none;
+            background: rgba(255,255,255,0.15);
+        }
 
-    .tax-btn { padding: 0.6rem 1.2rem; background: rgba(255,255,255,0.05); border: 1px solid var(--border-color); border-radius: 0.5rem; color: var(--text-main); font-weight: 700; cursor: pointer; }
-    .tax-btn.active { background: var(--accent-primary); color: #000; border-color: var(--accent-primary); }
+        .btn {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.8rem 1.6rem;
+            background: linear-gradient(45deg, var(--primary), var(--accent));
+            color: #fff;
+            border: none;
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
 
-    .btn-action {
-      background: linear-gradient(135deg, var(--accent-primary), var(--accent-purple)); color: #000; font-weight: 700; font-size: 1rem; padding: 0.9rem 1.75rem; border: none; border-radius: 0.75rem; cursor: pointer; transition: transform 0.2s, opacity 0.2s; box-shadow: 0 10px 20px rgba(56, 189, 248, 0.25);
-    }
-    .btn-action:hover { opacity: 0.9; transform: translateY(-1px); }
+        .btn:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+        }
 
-    .result-box { display: none; margin-top: 1rem; padding: 1.5rem; background: rgba(9, 13, 22, 0.8); border: 1px solid var(--accent-primary); border-radius: 0.75rem; animation: fadeIn 0.3s ease-in-out; }
+        #output {
+            margin-top: 1.5rem;
+            background: rgba(255,255,255,0.07);
+            border-radius: 0.5rem;
+            padding: 1rem;
+            min-height: 80px;
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.4;
+            white-space: pre-wrap;
+        }
 
-    footer { padding: 1.5rem; text-align: center; font-size: 0.85rem; color: var(--text-muted); border-top: 1px solid var(--border-color); }
+        /* Ad placeholders */
+        #ad-slot-top, #ad-slot-bottom {
+            width: 100%;
+            max-width: 728px;
+            height: 90px;
+            background: #222;
+            border: 2px dashed #444;
+            border-radius: 0.5rem;
+            margin: 1rem 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
 
-    @keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
-  </style>
+        @media (max-width: 600px) {
+            .glass {
+                padding: 1.5rem;
+            }
+            #ad-slot-top, #ad-slot-bottom {
+                height: 60px;
+            }
+        }
+    </style>
 </head>
 <body>
 
-  <header>
-    <div class="brand">⚡ Viral AI Instagram Bio Generator</div>
-    <div class="status-badge">100% Free Online</div>
-  </header>
+    <div id="ad-slot-top">Ad Slot Top (Adsterra / Monetag)</div>
 
-  <main>
-    <!-- Adsterra Top Banner Container -->
-    <div class="ad-slot" id="ad-slot-top">
-      <span class="ad-label">Advertisement</span>
-      <script src=\"https://pl30928168.effectivecpmnetwork.com/35/4b/49/354b499b924f3693363b131cb601391a.js\"></script><script src=\"https://pl30928169.effectivecpmnetwork.com/ae/16/8e/ae168eb52b8a2fe524b807295ff0b66d.js\"></script><script>atOptions = {'key' : 'fdc7957d7f23c1d3b63ef3ddb7c977cd','format' : 'iframe','height' : 90,'width' : 728,'params' : {}};</script><script src=\"https://www.highperformanceformat.com/fdc7957d7f23c1d3b63ef3ddb7c977cd/invoke.js\"></script>
-    </div>
+    <h1>Viral AI Instagram Bio Generator</h1>
 
-    <section class="app-card">
-      <h1>Viral AI Instagram Bio Generator</h1>
-      <p>Use this tool online for free. Fast, accurate, secure processing right in your browser.</p>
+    <section class="glass">
+        <label for="niche">Your Niche / Profession</label>
+        <input type="text" id="niche" placeholder="e.g., Travel Blogger, Fitness Coach">
 
-      
-        <div class="input-group">
-          <label for="user-input">Enter Input Content / Topic:</label>
-          <textarea id="user-input" rows="4" placeholder="Type or paste your topic here..."></textarea>
-        </div>
-        <button class="btn-action" onclick="generateToolResult()">Generate AI Output</button>
-        <div class="result-box" id="result-box">
-          <strong>Generated Output Result:</strong>
-          <p id="result-content" style="margin-top: 0.5rem; line-height:1.6; color:var(--accent-primary);"></p>
-          <button class="btn-action" style="margin-top:0.75rem; font-size:0.85rem; padding:0.5rem 1rem;" onclick="copyResult()">📋 Copy Result</button>
-        </div>
-        <script>
-          function generateToolResult() {
-            const val = document.getElementById('user-input').value.trim();
-            if (!val) { alert('Please enter some input text!'); return; }
-            document.getElementById('result-box').style.display = 'block';
-            document.getElementById('result-content').innerText = '✨ Optimized Result for: "' + val + '"\n\n1. High-Performance Output Generated successfully.\n2. Formatted for instant publishing and production use.\n3. Verified for 100% compliance.';
-          }
-          function copyResult() {
-            navigator.clipboard.writeText(document.getElementById('result-content').innerText);
-            alert('Copied output to clipboard!');
-          }
-        </script>
-      
+        <label for="keywords">Key Interests / Keywords (comma separated)</label>
+        <textarea id="keywords" placeholder="e.g., adventure, healthy living, sunrise"></textarea>
+
+        <button class="btn" id="generateBtn">Generate Bio</button>
+
+        <div id="output" class="glass"></div>
     </section>
 
-    <!-- Adsterra Bottom Native Ad Container -->
-    <div class="ad-slot" id="ad-slot-bottom">
-      <span class="ad-label">Advertisement</span>
-      <script src="https://pl30928168.effectivecpmnetwork.com/35/4b/49/354b499b924f3693363b131cb601391a.js"></script><script src="https://pl30928169.effectivecpmnetwork.com/ae/16/8e/ae168eb52b8a2fe524b807295ff0b66d.js"></script><script>atOptions = {'key' : 'fdc7957d7f23c1d3b63ef3ddb7c977cd','format' : 'iframe','height' : 90,'width' : 728,'params' : {}};</script><script src="https://www.highperformanceformat.com/fdc7957d7f23c1d3b63ef3ddb7c977cd/invoke.js"></script>
-    </div>
-  </main>
+    <div id="ad-slot-bottom">Ad Slot Bottom (Adsterra / Monetag)</div>
 
-  <footer>
-    <p>&copy; 2026 Viral AI Instagram Bio Generator &bull; Powered by Autonomous AI Platform</p>
-  </footer>
+    <script>
+        // Simple template based "AI"
+        const templates = [
+            "✨ {niche} ✨\n{keywords}\n📍 Based in {location}\n🔗 Link in bio!",
+            "🚀 {niche} on a mission to {goal}\n💡 {keywords}\n💬 DM for collaborations",
+            "🎯 {niche} | {keywords}\n🌍 Exploring the world one {keyword} at a time.\n🗓️ New posts every {frequency}",
+            "💥 {niche}\n🔥 {keywords}\n📸 Capturing moments that tell a story.\n👇 Check my latest work!",
+            "🧭 {niche} • {keywords}\n🤝 Partner with me: {email}\n🛒 Shop my picks below!"
+        ];
 
-      resContent.innerText = '✅ Analysis & Generation Complete for: "' + val.substring(0, 50) + '..."
+        const locations = ["New York", "Los Angeles", "London", "Paris", "Tokyo", "Sydney", "Berlin"];
+        const frequencies = ["day", "week", "month", "weekend"];
+        const emails = ["hello@example.com", "contact@mydomain.com", "info@mybrand.com"];
 
-Result Score: 98/100 (Optimal Performance)';
-      resBox.classList.add('active');
-    }
-  </script>
+        function randomItem(arr) {
+            return arr[Math.floor(Math.random() * arr.length)];
+        }
+
+        function generateBio() {
+            const niche = document.getElementById('niche').value.trim() || "Creator";
+            const rawKeywords = document.getElementById('keywords').value.trim();
+            const kwArray = rawKeywords ? rawKeywords.split(',').map(k => k.trim()).filter(k => k) : ["passion", "creativity"];
+            const keywords = kwArray.slice(0, 3).join(', ');
+            const keyword = kwArray[0] || "magic";
+
+            const template = randomItem(templates);
+            const bio = template
+                .replace(/{niche}/g, niche)
+                .replace(/{keywords}/g, keywords)
+                .replace(/{keyword}/g, keyword)
+                .replace(/{location}/g, randomItem(locations))
+                .replace(/{goal}/g, "inspire others")
+                .replace(/{frequency}/g, randomItem(frequencies))
+                .replace(/{email}/g, randomItem(emails));
+
+            document.getElementById('output').textContent = bio;
+        }
+
+        document.getElementById('generateBtn').addEventListener('click', generateBio);
+
+        // Optional: generate on Enter key in textarea
+        document.getElementById('keywords').addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' && !e.shiftKey) {
+                e.preventDefault();
+                generateBio();
+            }
+        });
+    </script>
 </body>
 </html>
